@@ -2,7 +2,11 @@
 https://github.com/Ferenus/opentrack
 
 #CDK
-cdk synth && cdk deploy
+Deployment region: us-east-2
+
+cdk synth
+cdk deploy --all
 
 # Website
-npm run build
+yarn start
+yarn build

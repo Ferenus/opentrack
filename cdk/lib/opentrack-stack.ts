@@ -23,12 +23,6 @@ export class OpentrackStack extends cdk.Stack {
 
     const dbInstance = rdsStack.postgreSQLinstance;
 
-    const staticSite = new StaticSiteStack(app, "StaticSiteStack", {
-        env: {
-            account: app.node.tryGetContext("account"),
-            region: app.node.tryGetContext("region"),
-        },
-        bucketName: ""
-    });
+    const staticSite = new StaticSiteStack(app, "StaticSiteStack", {});
   }
 }
