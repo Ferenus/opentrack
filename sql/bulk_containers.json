@@ -1,0 +1,4 @@
+{ "index" : { "_index": "containers", "_id" : "1" } }
+{"container_id": "TCNU1788058", "port_name": "SAINT JOHN, NB", "terminal_name": "DP World Terminal", "firms_code": "DPW_SJ", "vessel_name": "NORDPANTHER", "imo": 9673654}
+{ "index" : { "_index": "containers", "_id" : "2" } }
+{"container_id": "CCLU7328190", "port_name": "PORT EVERGLADES, FL", "terminal_name": "Florida International Terminal", "firms_code": "", "vessel_name": "ETE N", "imo": 9509126}

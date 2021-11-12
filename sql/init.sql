@@ -220,7 +220,6 @@ INSERT INTO vessel (name, imo, terminal_id) VALUES ('WAN HAI 305', 9238181, floo
 INSERT INTO vessel (name, imo, terminal_id) VALUES ('WAN HAI 271', 9493250, floor(random()*(64))+1);
 
 INSERT INTO container (container_id, vessel_id) VALUES ('TCNU1788058', floor(random()*(100))+1);
-INSERT INTO container (container_id, vessel_id) VALUES ('TCNU1788058', floor(random()*(100))+1);
 INSERT INTO container (container_id, vessel_id) VALUES ('CCLU7328190', floor(random()*(100))+1);
 INSERT INTO container (container_id, vessel_id) VALUES ('TRHU4577936', floor(random()*(100))+1);
 INSERT INTO container (container_id, vessel_id) VALUES ('KOCU4523161', floor(random()*(100))+1);

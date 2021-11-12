@@ -11,3 +11,7 @@ cdk deploy --all
 # Website
 yarn start
 yarn build
+
+# Loading data to ES
+Role ARN: arn:aws:iam::563186744327:role/OpentrackStack-lambdaServiceRole73D6B375-RT7EFJ0K7SL8
+curl -XPOST -u "EsUser:testPassword123!" "https://search-esstack-domain-1pyplst33e0dn-wp563x6rajepmm5rr4ti5xuby4.us-east-2.es.amazonaws.com/_bulk" --data-binary @bulk_containers.json -H "Content-Type: application/json"
