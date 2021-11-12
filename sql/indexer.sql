@@ -1,4 +1,5 @@
-SELECT to_json(a) FROM (SELECT container_id,
+SELECT to_json(a) FROM (SELECT container.id AS "_id",
+                               container_id,
                                port.name     AS "port_name",
                                terminal.name AS "terminal_name",
                                terminal.firms_code,

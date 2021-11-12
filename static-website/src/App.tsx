@@ -26,11 +26,9 @@ function App() {
             });
             if (response.status !== 400) {
                 const data = await response.json();
-                const a = data.map((r: any) => r._source);
-                console.log(a);
-                setOutput(a);
+                setOutput(data.map((r: any) => r._source));
             }
-        };
+        }
         fetchContainers();
     };
 

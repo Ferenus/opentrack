@@ -14,24 +14,27 @@ export class OpentrackStack extends cdk.Stack {
         const vpcStack = new VpcStack(app, "VpcStack");
         const vpc = vpcStack.vpc;
 
-        const credentialsStack = new CredentialsStack(
+        const rdsCredentialsStack = new CredentialsStack(
             app,
             "CredentialsStack"
         );
 
-        const rdsStack = new RdsStack(app, "RdsStack", {
-            credentials: credentialsStack.credentials,
+        // RDS Postgres instance
+        new RdsStack(app, "RdsStack", {
+            credentials: rdsCredentialsStack.credentials,
             vpc,
         });
 
-        const dbInstance = rdsStack.postgreSQLinstance;
-
         const lambdaServiceRole = this.createServiceRole("lambdaServiceRole", 'lambda.amazonaws.com', "service-role/AWSLambdaBasicExecutionRole");
+
+        // ElasticSearch
         const es = new EsStack(app, "EsStack", {domainName: "containers", lambdaServiceRole: lambdaServiceRole});
 
-        const staticSite = new StaticSiteStack(app, "StaticSiteStack", {});
+        // React static website
+        new StaticSiteStack(app, "StaticSiteStack", {});
 
-        const backend = new AppStack(app, "AppStack", {lambdaServiceRole: lambdaServiceRole, esDomain: es.esDomain});
+        // Lambda and API gateway
+        new AppStack(app, "AppStack", {lambdaServiceRole: lambdaServiceRole, esDomain: es.esDomain});
     }
 
     private createServiceRole(identifier: string, servicePrincipal: string, policyName: string) {
