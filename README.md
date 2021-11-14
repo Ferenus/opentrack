@@ -1,7 +1,16 @@
+# Problem statement
+You should expose the ability to perform the following full-text search queries, that returns containers by:
+- container ID
+- port name
+- terminal name
+- terminal FIRMS code
+- vessel name
+- vessel IMO
+
+Your solution should scale well to large (> 1 million record) table sizes
+
 # Opentrack project
 Website: http://staticsitestack-sitebucket397a1860-13bk5941668jg.s3-website.us-east-2.amazonaws.com/
-
-Git: https://github.com/Ferenus/opentrack
 
 # CDK
 Deployment region: us-east-2
@@ -23,4 +32,4 @@ IAM Role to access ES:
 
 INSERT INTO ES:
 
-curl -XPOST -u "EsUser:testPassword123!" "https://search-esstack-domain-1pyplst33e0dn-wp563x6rajepmm5rr4ti5xuby4.us-east-2.es.amazonaws.com/_bulk" --data-binary @bulk_containers.json -H "Content-Type: application/json"
+curl -XPOST -u "user:password" "https://search-esstack-domain-1pyplst33e0dn-wp563x6rajepmm5rr4ti5xuby4.us-east-2.es.amazonaws.com/_bulk" --data-binary @bulk_containers.json -H "Content-Type: application/json"
